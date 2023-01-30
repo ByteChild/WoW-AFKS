@@ -782,6 +782,9 @@ function AFKS:UpdateTimer()
 
 		if GetLocale() == "koKR" or GetLocale() == "zhCN" or GetLocale() == "zhTW" then -- East Asia date format check
 			self.AFKMode.bottom.date:SetText(format(AFKS_DATEFORMAT, year, month, day, weekday, GetLocalTime(true)))
+		
+		elseif GetLocale() == "deDE" or GetLocale() == "esES" or GetLocale() == "frFR" or GetLocale() == "itIT" or GetLocale() == "ptBR" or GetLocale() == "ruRU" then -- Europe date format check
+      			self.AFKMode.bottom.date:SetText(format(AFKS_DATEFORMAT, day, month, year, weekday, GetLocalTime(true)))			
 		else
 			self.AFKMode.bottom.date:SetText(format(AFKS_DATEFORMAT, month, day, year, weekday, GetLocalTime(true)))
 		end
